@@ -8,9 +8,11 @@ mv git-lfs-2.0.1/git-lfs /usr/bin/ && \
 rm -rf git-lfs-2.0.1 && \
 rm -rf git-lfs-linux-amd64-2.0.1.tar.gz
 
+# Install Conda Packages
 RUN conda config --set ssl_verify no && \
-conda update conda && \
-conda install numpy pandas datashape setuptools pytest sphinx
+conda install conda=4.4.10 && \
+conda install numpy=1.14.0 pandas=0.22.0 datashape=0.5.4 setuptools=38.4.0 pytest=3.3.2 \
+sphinx=1.6.6 coverage=4.4.2 flake8=3.5.0
 
 #Installs flake8 and coverage
-RUN pip install coverage flake8
+# RUN pip install coverage flake8
